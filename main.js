@@ -45,14 +45,25 @@ Create two computers object from your factory function and save them in one arra
 Note: please write one or two lines here describing your solution.
 */
 
-function makeComputer(type, color, weight) {
-  // TODO: Your code here
+// a factory function will return an object based on the function's parameters.
+// Its purpose is to create objects, hence the name factory.
+
+function makeComputer(type, color, weight, OS) {
+  return {
+    type: type,
+    color: color,
+    weight: weight,
+    OS: OS
+  }
 }
+
+var computer1 = makeComputer('Desktop', 'red', '5KG', 'Windows');
+var computer2 = makeComputer('Laptop', 'black', '2KG', 'Linux');
 
 // Write a function displayComputer that can be used to display one computer.
 
 function displayComputer(computer) {
-  // TODO: Your code here
+  return computer.type + ' ' + computer.color + ' ' + computer.weight + ' ' + computer.OS + ' '
 }
 
 //=============================================================================
