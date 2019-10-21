@@ -132,8 +132,14 @@ var data = [
   }
 ];
 
+// This function uses filter which filters every single element with a condition (predicate).
+// this function loops through the array of objects while only checking the value of the key: "population" of each object that is bigger than
+// 500 million, If so; it will push that element(object) to an array and the result will be an array of all the objects that meets that condition.
+
 function highestPopulation(arrayOfObjects) {
-  // TODO: your code here
+  return filter(arrayOfObjects, function (element, i) {
+    return element.population > 500000000; // Only return element that meets that condition.
+  });
 }
 
 //=============================================================================
