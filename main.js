@@ -158,8 +158,15 @@ halveAll(numsArray); ==> [ 1, 3, 10, 4, 7 ]
 Note: please write one or two lines here describing your solution.
 */
 
+// This function loops through the array using the map function, and only Halves the "number" valued elements.
+// the result will be an array of all the number elements halved.
+
 function halveAll(numbers) {
-  // your code is here
+  return map(numbers, function (number) {
+    if (typeof number === 'number'){
+      return number/2;
+    }
+  })
 }
 
 //=============================================================================
