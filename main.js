@@ -48,22 +48,35 @@ Note: please write one or two lines here describing your solution.
 // a factory function will return an object based on the function's parameters.
 // Its purpose is to create objects, hence the name factory.
 
-function makeComputer(type, color, weight, OS) {
+function makeComputer(type, color, weight, os, ram, cpuSpeed, cpuType, gpuRam, gpuType) {
   return {
     type: type,
     color: color,
     weight: weight,
-    OS: OS
+    specs: {
+      os: os,
+      ram: ram,
+      cpu: {
+        speed: cpuSpeed,
+        type: cpuType
+      },
+      gpu: {
+        ram: gpuRam,
+        type: gpuType
+      }
+    }
   }
 }
 
-var computer1 = makeComputer('Desktop', 'red', '5KG', 'Windows');
-var computer2 = makeComputer('Laptop', 'black', '2KG', 'Linux');
+var computer1 = makeComputer('Desktop', 'red', '5KG', 'Windows', '8GB', "i7 5700", 'Intel', '8Gb', 'Nvidea');
+var computer2 = makeComputer('Laptop', 'green', '2KG', 'Linux', '24GB', "i5 5200", 'AMD', '8Gb', 'AMD');
 
 // Write a function displayComputer that can be used to display one computer.
 
 function displayComputer(computer) {
-  return computer.type + ' ' + computer.color + ' ' + computer.weight + ' ' + computer.OS + ' '
+  return computer.type + ' ' + computer.color + ' ' + computer.weight + ' ' + computer.specs.os + ' '
+      + computer.specs.ram + ' ' + computer.specs.cpu.type + ' ' + computer.specs.cpu.speed + ' ' + computer.specs.gpu.type + ' '
+      +computer.specs.gpu.ram
 }
 
 //=============================================================================
