@@ -83,8 +83,18 @@ var strArr = ['hello', 'world', 'whirled', 'peas'];
 uppercaseAll(strArr); ==> [ 'HELLO', 'WORLD', 'WHIRLED', 'PEAS' ]
 */
 
+//This function takes an arrayOfStrings as a parameter, and pass this function to an invocation of map along with a function that
+// ONLY converts string values to UPPERCASE. And return an array of all those strings returned to UPPERCASE and all other types of values are
+// remain the same.
+
 function uppercaseAll(arrayOfStrings) {
-  // TODO: your code here
+  return map(arrayOfStrings, function (element, i) {
+    if (typeof element === "string"){ // checks if the the value of the element is string or not before converting to UpperCase
+      return element.toUpperCase(); // return the element UPPERCASED
+    }else {
+      return element; //If not String, return it as it is.
+    }
+  });
 }
 
 //=============================================================================
