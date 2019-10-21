@@ -181,8 +181,24 @@ values({first : 5, second: 'something' , third : 129}) ==> [5, 'something', 129]
 
 Note: please write one or two lines here describing your solution.
 */
+// this function implements each() function; because the current provided each function can handle objects.
+// this function only pushes the values of each key in the objects through looping over the object, and only pushing the values
+// in the a new empty array called: acc[]. After pushing all the values, the function will return the acc array.
+
 function values(obj) {
-  // TODO: your code here
+  var acc = [];
+  each(obj, function (element) {
+    acc.push(element);
+  });
+  return acc;
+}
+// the same function can be implemented using the current version of the map function, but it might be confusing due to the fact that the current
+// map function is designed to deal with arrays only at the moment
+
+function valuesMap(obj) {
+  return map(obj, function (element) {
+    return element;
+  });
 }
 
 //Good Luck :))
